@@ -54,18 +54,11 @@ bindEvents(){
 }
 
 setup(){ 
-    console.log("1");
   this.createParticles = new CreateParticles( this.scene, this.font, this.particle, this.camera, this.renderer );
-  console.log(this.createParticles);
-    console.log("2");
 }
 
 render() {
-    console.log("3");
-    console.log(this.createParticles);
    this.createParticles.render()
-
-   console.log("4");
    this.renderer.render( this.scene, this.camera )
    this.animateStars();
 }
@@ -146,7 +139,7 @@ onWindowResize(){
 class CreateParticles {
   
   constructor( scene, font, particleImg, camera, renderer ) {
-  
+      try {
       this.scene = scene;
       this.font = font;
       this.particleImg = particleImg;
@@ -172,7 +165,9 @@ class CreateParticles {
 
       this.setup();
       this.bindEvents();
-
+    } catch (err) {
+        console.log(err);
+    }
   }
 
 
