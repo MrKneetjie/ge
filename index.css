@@ -1,0 +1,1000 @@
+@font-face {
+    font-family: 'Autobahn';
+    /* src: url('./assets/space_age.ttf') format('woff'), Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    src: url('./assets/space_age.ttf') format('truetype');
+    /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Autobahn", "Rajdhani", "Roboto", sans-serif;
+    text-align: justify;
+    scroll-behavior: smooth;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    color: white;
+
+    width: 100%;
+    height: 75px;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    z-index: 1000000;
+}
+
+a {
+    text-decoration: inherit;
+    color: inherit;
+    cursor: pointer;
+}
+
+a:visited {
+    text-decoration: inherit;
+    color: inherit;
+    cursor: pointer;
+}
+
+nav a {
+    margin-right: 25px;
+    animation: flyTop 0.5s ease, fadeIn 0.5s ease;
+}
+
+#login {
+    animation: flyTop 0.5s ease, fadeIn 0.5s ease;
+}
+
+body {
+    margin: 0;
+    height: 100%;
+    color: white;
+    font-size: 9px;
+    background-color: black;
+}
+
+#magic {
+    width: 100vw;
+    height: calc(100vh - 300px);
+    display: block;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+a {
+    color: white;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+canvas {
+    width: 100%;
+    height: 100vh;
+    display: block;
+    top: 0;
+    left: 0;
+    position: absolute;
+    pointer-events: none
+}
+
+canvas:first-child {
+    position: fixed;
+}
+
+nav .icon {
+    border-radius: 100px 100px 100px 100px;
+    height: 42px;
+    width: 42px;
+    padding: 0;
+    box-sizing: content-box;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav img {
+    height: 30px;
+    width: 30px;
+}
+
+#hero {
+    position: absolute;
+    top: 80%;
+    width: 100%;
+    text-align: center;
+    color: #999;
+}
+
+#about {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#about .border {
+    margin: 150px 0px;
+    padding: 12px;
+}
+
+#about h1 {
+    font-size: 80px;
+    padding: 12px;
+}
+
+/* #about h1:before,
+#about h1:after {
+    content: "WHAT IS THE GALACTIC EMPIRE?";
+    content: "";
+    position: absolute;
+}
+
+#about h1:before {
+    left: 22px;
+    top: 14px;
+    color: #16E1A0;
+    z-index: -2;
+}
+
+#about h1:after {
+    left: 26px;
+    top: 10px;
+    color: #d76ae9;
+    z-index: -1;
+} */
+
+#about h4 {
+    font-size: 20px;
+    margin: 0px 10%;
+    text-align: center;
+}
+
+#about img {
+    width: 250px;
+    height: 250px;
+    margin-top: 150px;
+}
+
+#about p {
+    font-size: 16px;
+    margin-top: 25px;
+    text-align: center;
+    font-weight: bold;
+    width: 250px;
+}
+
+#splitter {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#splitter img {
+    width: 60%;
+}
+
+#rarity {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20%;
+}
+
+.rarity-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+#rarity h1 {
+    font-size: 32px;
+    margin: 100px 0px;
+    padding: 12px;
+}
+
+#portal {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.portal-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    height: 100px;
+    border: none;
+}
+
+#portal h1 {
+    font-size: 60px;
+    padding: 12px;
+    padding-right: 80px;
+}
+
+#rarity h4 {
+    width: 80%;
+    font-size: 20px;
+}
+
+#rarity-button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#rarity a {
+    font-size: 26px;
+    width: 250px;
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #6931f1;
+    border-radius: 15px;
+    margin: 100px 0px;
+    box-shadow: 1px 1px 0 #6931f1, 0 0 20px 5px #7e0cff;
+    animation: rarity 1s infinite ease;
+}
+
+#rarity a:hover {
+    color: white;
+}
+
+#rarity img {
+    width: 350px;
+    height: 350px;
+    margin: auto;
+}
+
+/* animates box shadow glow effect */
+@keyframes rarity {
+    0%,
+    100% {
+        color: #6931f1;
+        box-shadow: 1px 1px 0 #6931f1, 0 0 20px 5px #7e0cff;
+    }
+
+    50% {
+        color: #8456f0;
+        box-shadow: 1px 1px 30px #895bf5, 0 0 50px 5px #a25af5;
+    }
+}
+
+#banner {
+    width: 100%;
+}
+
+#roadmap {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#roadmap h1 {
+    font-size: 32px;
+    margin: 100px 0px;
+    padding: 12px;
+}
+
+.roadmap-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#roadmap img {
+    width: 60%;
+    margin-bottom: 100px;
+    animation: glow 2s infinite ease;
+}
+
+#roadmap img:before,
+#roadmap img:after {
+    content: '';
+    display: block;
+    position: absolute;
+}
+
+#roadmap img:before {
+    width: 22px;
+    height: 22px;
+    top: 11px;
+    left: 11px;
+    background: rgba(255, 255, 255, 0.25);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 2px 3px #cbb3f6;
+    box-shadow: 1px 1px 0 #6931f1, 0 0 20px 5px #7e0cff;
+}
+
+/* animates box shadow glow effect */
+@keyframes glow {
+
+    0%,
+    100% {
+        box-shadow: 1px 1px #3a115c, 0 0 20px 5px #8864cc, inset 2px 2px #d4aae7;
+    }
+
+    50% {
+        box-shadow: 1px 1px #3a115c, 0 0 16px 8px #8864cc, inset 2px 2px #d4aae7;
+    }
+}
+
+#team {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#team h1 {
+    margin: 50px 0px;
+    font-size: 32px;
+    padding: 12px;
+}
+
+.members-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.members {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 50px;
+}
+
+#team .member {
+    height: 300px;
+}
+
+.member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px 20px;
+    text-align: center;
+}
+
+.member img {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 50px;
+    border-radius: 20px;
+}
+
+.men {
+    padding-bottom: 80px !important;
+}
+
+.men img {
+    width: 250px;
+    height: 250px;
+}
+
+.member h4 {
+    font-size: 26px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.member p {
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#disclaimer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 300px;
+    margin-top: 100px;
+}
+
+#disclaimer span {
+    font-size: 14px;
+}
+
+#disclaimer p {
+    font-size: 14px;
+    margin: 0px 10%;
+    margin-bottom: 100px;
+    text-align: justify;
+}
+
+#disclaimer a {
+    font-size: 14px;
+    color: cornflowerblue;
+}
+
+footer {
+    width: 100%;
+    height: 75px;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+footer a {
+    margin-left: 25px;
+}
+
+footer a:first-child {
+    margin-left: 10%;
+}
+
+.border {
+    padding: 12px 12px;
+    position: relative;
+}
+
+.border:before,
+.border:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 13px;
+    top: 0;
+    bottom: 0;
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(135, 30, 255);
+}
+
+.border:before {
+    left: 0;
+    border-radius: 5px 0 0 5px;
+    border-right: none;
+}
+
+.border:after {
+    right: 0;
+    border-radius: 0 5px 5px 0;
+    border-left: none;
+}
+
+.border-light {
+    padding: 40px;
+    position: relative;
+}
+
+.border-light:before,
+.border-light:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 24px;
+    height: 100%;
+    top: 0;
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.border-light:before {
+    left: 0;
+    border-radius: 24px 0 0 24px;
+    border-right: none;
+}
+
+.border-light:after {
+    right: 0;
+    border-radius: 0 24px 24px 0;
+    border-left: none;
+}
+
+
+@keyframes flyTop {
+    0% {
+        transform: translateY(-200%);
+    }
+    
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes flyBottom {
+    0% {
+        transform: translateY(200%);
+    }
+    
+    100% {
+        transform: translatey(0%);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    
+    100% {
+        opacity: 100;
+    }
+}
+
+.animated {
+    opacity: 0;
+}
+
+.animate {
+    opacity: 0;
+    animation: flyBottom 0.5s ease, fadeIn 0.5s ease;
+    animation-fill-mode: forwards;
+    animation-delay: 0.5s;
+}
+
+.border-svg {
+    width: 100%;
+    height: 100%;
+    background: black;
+    color: white;
+    
+    display: flex;
+    display: -webkit-box;
+    justify-content: center;
+    align-items: center;
+    
+    position: relative;
+}
+
+.border-svg h1 {
+    position: absolute;
+    text-align: center;
+    top: auto;
+    left: auto;
+    margin: 0 auto !important;
+}
+
+.border-svg p {
+    position: absolute;
+    text-align: center;
+    top: auto;
+    left: auto;
+    padding: 8px 4px;
+    margin: 0 auto !important;
+}
+
+.border-svg svg {
+    position: absolute;
+    top: 0;
+    box-sizing: border-box;
+}
+
+.border-svg rect {
+    --length: 800px;
+    --length2: 1600px;
+    stroke: rgb(135, 30, 255);
+    stroke-dasharray: calc(var(--length)/2/3) calc(var(--length)/2/3*2);
+    animation: modal-button__dash 15s linear infinite;
+    transition: .3s linear all;
+    box-sizing: border-box;
+    stroke-width: 5px;
+}
+
+.border-svg:hover rect {
+    animation: none;
+    stroke-width: 8px;
+    stroke-dasharray: calc(var(--length)/4) calc(var(--length)/4);
+}
+
+.border-svg:hover svg {
+    transition: .3s linear all;
+    filter: drop-shadow(3px 0px 0px rgb(135, 30, 255)) drop-shadow(-3px 0px 0px rgb(135, 30, 255)) drop-shadow(0px 3px 0px rgb(135, 30, 255)) drop-shadow(0px -3px 0px rgb(135, 30, 255));
+}
+
+@keyframes modal-button__dash {
+    to {
+        stroke-dashoffset: var(--length2);   
+    }
+}
+
+#about .border-svg:first-of-type, #rarity .border-svg:first-of-type, #roadmap .border-svg:first-of-type, #team .border-svg:first-of-type   {
+    margin: 200px 0px;
+}
+
+.form-wrapper {
+    width: 100%;
+    height: 100%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    position: absolute;
+    top: 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    font-size: 48px;
+    text-align: start !important;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    height: 30px;
+    width: 350px;
+    padding: 5px;
+    font-size: 20px;
+}
+
+#password, #confirm {
+    font-size: 40px;
+}
+
+form button {
+    font-size: 26px;
+    width: 160px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    text-align: start !important;
+    border: none;
+    background-color: #ffffff00;
+    align-items: center;
+    color: #6931f1;
+    border-radius: 15px;
+    margin: 50px 0px;
+    box-shadow: 1px 1px 0 #6931f1, 0 0 20px 5px #7e0cff;
+    animation: rarity 1s infinite ease;
+}
+
+form button:hover {
+    color: white;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.modal-wrapper {
+    width: 100%;
+    height: 100%;
+    
+    display: flex;
+    justify-content: center;
+    
+    margin-top: 20%;
+    
+    position: absolute;
+    top: 0;
+    z-index: 10;
+}
+
+.modal {
+    width: 400px;
+    height: 200px;
+    background-color: white;
+    color: #2eb64c;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    border-radius: 20px;
+    box-shadow: 1px 1px 0 #6931f1, 0 0 20px 5px #7e0cff;
+}
+
+.modal h1 {
+    font-size: 48px;
+}
+
+.error   {
+    color: #d33c3c;
+}
+
+.modal button {
+    width: 150px;
+    height: 50px;
+    
+    margin-top: 20px;
+    font-size: 24px;
+    
+    border-radius: 5px;
+    border: none;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: start !important;
+    background-color: #6931f1;
+    color: white;
+}
+
+.hidden {
+    display: none;
+}
+
+.holdings-wrapper {
+    width: 100%;
+    height: 100%;
+    
+    position: absolute;
+    top: 0;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.holdings-wrapper h1 {
+    font-size: 50px;
+    text-align: center;
+    margin-top: 200px;
+}
+
+.holdings {
+    width: 80%;
+    margin-top: 100px;
+    
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.holding {
+    width: 300px;
+    height: 300px;
+    padding: 20px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    color: white;
+}
+
+.holding img {
+    width: 200px;
+    height: 200px;
+}
+
+.holding h4 {
+    font-size: 30px;
+    margin-top: 30px;
+}
+
+#rank {
+    margin-top: 10px;
+    font-size: 15px;
+}
+@media(max-width: 768px) {
+    * {
+        text-align: center
+    }
+
+    nav {
+        justify-content: space-between;
+        width: 90%;
+        padding: 0px 5%;
+    }
+
+    nav a {
+        margin-right: 0px;
+    }
+
+    #about h1 {
+        font-size: 28px;
+        text-align: center;
+    }
+
+    #about h4 {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .member {
+        width: 80%;
+        margin: 20px 5%;
+    }
+
+    #rarity h1 {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    #rarity h4 {
+        font-size: 16px;
+        width: 80%;
+    }
+
+    #rarity img {
+        width: 250px;
+        height: 250px;
+        margin: 50px auto;
+    }
+
+    #rarity a {
+        font-size: 20px;
+    }
+
+    #rarity {
+        width: 100%;
+        padding: 0;
+    }
+
+    #rarity-small {
+        flex-direction: column;
+        width: 80%;
+        padding: 0 10%;
+    }
+
+    nav .icon {
+        height: 30px;
+        width: 30px;
+    }
+
+    nav img {
+        height: 20px;
+        width: 20px;
+    }    
+    .input-group label {
+        font-size: 36px;
+    }
+    
+    .input-group input {
+        width: 300px;
+    }
+
+    form button {
+        font-size: 20px;
+        width: 130px;
+        height: 40px;
+    }
+
+    .modal {
+        width: 300px;
+    }
+
+    .modal h1 {
+        font-size: 36px;
+    }
+    
+    .modal button {
+        width: 130px;
+        height: 40px;
+    
+        font-size: 20px;
+    }
+
+    #errormessage {
+        font-size: 11px;
+        padding: 0 10px;
+        overflow-wrap: normal;
+        word-wrap: normal;
+        text-align: start !important;
+    }
+
+    #password {
+        font-size: 20px;
+    }
+
+    #confirm {
+        font-size: 20px;
+    }
+}
+
+@media(max-width: 1200px) {
+    .members {
+        flex-wrap: wrap;
+    }
+
+    #about h1 {
+        font-size: 50px;
+        text-align: center;
+    }
+
+    #about h1:before,
+    #about h1:after {
+        content: "";
+    }
+
+    #about h4 {
+        font-size: 18px;
+        text-align: center;
+        font-weight: normal;
+        overflow: hidden;
+    }
+
+    #about .border {
+        width: 70%;
+        margin-bottom: 50px;
+    }
+
+    .member {
+        width: 70%;
+        margin: 20px 5%;
+    }
+
+    #splitter img {
+        width: 80%;
+    }
+
+    #rarity {
+        flex-direction: column;
+        width: 80%;
+        padding: 0 10%;
+    }
+
+    #rarity h1 {
+        font-size: 40px;
+        text-align: center;
+    }
+
+    #rarity h4 {
+        font-size: 18px;
+        display: contents;
+    }
+
+    #rarity img {
+        margin: 75px auto;
+    }
+
+    .rarity-wrapper {
+        align-items: center;
+    }
+
+    #rarity a {
+        margin-bottom: 0px;
+    }
+
+    #roadmap h1 {
+        font-size: 30px;
+    }
+
+    #roadmap img {
+        width: 80%;
+        margin-bottom: 25px;
+    }
+
+    #team .member {
+        width: 50%;
+    }
+}
