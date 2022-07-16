@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'Autobahn';
-    /* src: url('./assets/space_age.ttf') format('woff'), Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    src: url('./assets/space_age.ttf') format('truetype');
+    /* src: url('./assets/FontsFree-Net-autobahn.ttf') format('woff'), Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    src: url('./assets/FontsFree-Net-autobahn.ttf') format('truetype');
     /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
 }
 
@@ -65,7 +65,7 @@ body {
 
 #magic {
     width: 100vw;
-    height: calc(100vh - 300px);
+    height: calc(100vh - 75px);
     display: block;
     top: 0;
     left: 0;
@@ -204,27 +204,6 @@ nav img {
     font-size: 32px;
     margin: 100px 0px;
     padding: 12px;
-}
-
-#portal {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-.portal-wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    height: 100px;
-    border: none;
-}
-
-#portal h1 {
-    font-size: 60px;
-    padding: 12px;
-    padding-right: 80px;
 }
 
 #rarity h4 {
