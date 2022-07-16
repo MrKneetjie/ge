@@ -8,7 +8,7 @@
     <link rel="icon" type="image/png" href="https://example.com/assets/king.png"/>
     <title>The Galatics</title>
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&amp;display=swap" rel="stylesheet">
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900italic,900' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900italic,900' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="index.css?v=12">
 </head>
 <body id="home">
@@ -24,7 +24,7 @@ manager.onLoad = function() {
 
 var typo = null;
 const loader = new THREE.FontLoader( manager );
-const font = loader.load('https://res.cloudinary.com/dydre7amr/raw/upload/v1612950355/font_zsd4dr.json', function ( font ) { typo = font; });
+const font = loader.load('https://ge-three.vercel.app/assets/space_age_json.json', function ( font ) { typo = font; });
 const particle = new THREE.TextureLoader( manager ).load( 'https://res.cloudinary.com/dfvtkoboz/image/upload/v1605013866/particle_a64uzf.png');
 
 }
@@ -54,12 +54,10 @@ bindEvents(){
 }
 
 setup(){ 
-
-  this.createParticles = new CreateParticles( this.scene, this.font,             this.particle, this.camera, this.renderer );
+  this.createParticles = new CreateParticles( this.scene, this.font, this.particle, this.camera, this.renderer );
 }
 
 render() {
-  
    this.createParticles.render()
    this.renderer.render( this.scene, this.camera )
    this.animateStars();
@@ -141,7 +139,7 @@ onWindowResize(){
 class CreateParticles {
   
   constructor( scene, font, particleImg, camera, renderer ) {
-  
+      try {
       this.scene = scene;
       this.font = font;
       this.particleImg = particleImg;
@@ -156,18 +154,20 @@ class CreateParticles {
       this.buttom = false;
         this.skrt = window.screen.width < window.screen.height ? 2 : 1;
       this.data = {
-          text: 'GALACTIC\n   EMPIRE',
+          text: 'THE\n  GALACTICS',
           amount: 1500,
           particleSize: 1,
           particleColor: 0xffffff,
-          textSize: Math.ceil(16/(1920/window.screen.width)*this.skrt),
+          textSize: Math.ceil(12/(1920/window.screen.width)*this.skrt),
           area: 250,
           ease: .05,
       }
 
       this.setup();
       this.bindEvents();
-
+    } catch (err) {
+        console.log(err);
+    }
   }
 
 
@@ -470,29 +470,10 @@ class CreateParticles {
 
 
       <nav>
-        <div id="login"></div>
-        <a href="#home">HOME</a>
-        <a href="#about">ABOUT</a>
-        <a href="#rarity">RARITY</a>
-        <a href="#roadmap">ROADMAP</a>
-        <a href="#team">TEAM</a>
+        <a href="#home">PORTAL</a>
         <a href="https://discord.gg/qQ2RKnFCKP" title="Join Discord" target="_blank"><div class="icon"><img src="https://toppng.com/uploads/preview/discord-black-logo-11593869050tvdn0uaewo.png" alt=""></div></a>
         <a href="https://mobile.twitter.com/galacticempnft" title="Follow on Twitter" target="_blank"><div class="icon"><img src="https://toppng.com/uploads/preview/twitter-logo-png-transparent-background-graphic-freeuse-twitter-logo-black-11562911265gfzrhbl86r.png" alt=""></div></a>
     </nav>
-    <script>
-        let login = document.getElementById('login');
-
-        function change() {
-            if(localStorage.getItem("token")) {
-                login.innerHTML = "<a href='./holdings.html'>ACCOUNT</a>";
-                // login.innerHTML = "<a href='./holdings' onclick='localStorage.clear(); change()'>ACCOUNT</a>";
-            } else {
-                login.innerHTML = "<a href='./login.html'>LOGIN</a>"
-            }
-        }
-
-        change();
-    </script>
     <div id="magic"></div>
 
 
@@ -575,6 +556,10 @@ class CreateParticles {
              animateStars();
  
      }
+
+     function navigate() {
+         window.location.href = "./holdings.html";
+     }
      
      init();
      addSphere();
@@ -610,140 +595,19 @@ class CreateParticles {
       
        }
       </script>
-    <p id="hero">SCROLL DOWN</p>
-    <div id="about">
-        <div class="border-svg animated">
-            <svg>
-                <rect width="100%" height="100%" />
-            </svg>
-            <h1 class="glitch">WHAT IS THE GALACTIC EMPIRE?</h1>
-        </div>
-        <h4 class="border-light animated">THERE ARE 3,333 CHARACTERS IN THE EMPIRE CONSISTING OF OF 2,222 MOON MEN AND 1,111 GALACTIC BABES.<br><br>
-
-        EACH CHARACTER FROM THE EMPIRE IS UNIQUE FROM ANOTHER AND CUSTOM HAND DRAWN BY THE FAMOUS ARTIST DINO TOMIC.<br><br>
-        
-        THE CHARACTERS LIVE IN THE EMPIRE CALLED FORESATURN.<br><br>
-        
-        EVERYONE IN FORESATURN HAS A SPECIALIZED POWER ASSIGNED AT BIRTH: TANK, MAGE, AND DPS AND ARE DESIGNED TO THRIVE IN THE GALACTIC METAVERSE (BE PREPARED FOR CLAN CHALLENGES).<br><br>
-        
-        THE MOON MEN VALUE VIRTUE, AGILITY & STRENGTH. THERE ARE MANY MOON MEN AND YOU MUST FIND THE RAREST TO BREED WITH THE FEW.. (GALACTIC BABES).<br><br>
-        
-        THE GALACTIC BABES ARE FEARLESS AND LEVERAGE PEACE AND LOVE AND ARE NOT EASILY OBTAINED.<br><br>
-        
-        TOGETHER THE MOON MEN AND GALACTIC BABES WILL TAKE BACK THEIR COLONY AND REPOPULATE THE PLANET.<br><br><br><br>
-        
-        
-        JOIN THE GALACTIC IF YOU LIKE ANIME, VIDEO GAMES, PETS, EASTER EGGS.. AND BABES.<br><br><br><br>
-        
-        
-        GALACTIC EMPIRE WILL BE ABLE TO BE BOUGHT, AND IS AVAILABLE ON OPENSEA.</h4>
-    </div>
-    <div class="members">
-        <div class="member men border-light animated">
-            <img src="./assets/man.png" alt="">
-            <div class="border-svg animated">
+      <div id="portal">
+        <button class="portal-wrapper" onclick="navigate()" disabled>
+            <div class="border-svg">
                 <svg>
                     <rect width="100%" height="100%" />
                 </svg>
-                <p>2,222 MOON MEN</p>
+                <h1>PORTAL</h1>
             </div>
-        </div>
-        <div class="member men border-light animated">
-            <img src="./assets/generic.png" alt=""></h4>
-            <div class="border-svg animated">
-                <svg>
-                    <rect width="100%" height="100%" />
-                </svg>
-                <p>HAND DRAWN GENERATED AT RANDOM</p>
-            </div>
-        </div>
-        <div class="member men border-light animated">
-            <img src="./assets/babe.png" alt=""></h4>
-            <div class="border-svg animated">
-                <svg>
-                    <rect width="100%" height="100%" />
-                </svg>
-                <p>1,111 GALACTIC BABES</p>
-            </div>
-        </div>
-    </div>
-    <div id="rarity">
-        <div class="rarity-wrapper">
-            <div class="border-svg animated">
-                <svg>
-                    <rect width="100%" height="100%" />
-                </svg>
-                <h1>THE GALACTIC EMPIRE STORY</h1>
-            </div>
-            <h4 class="animated">A LONG TIME AGO..<br><br>
-    
-            THE FORESATURN EMPIRE LIVED IN PEACE AND HARMONY. THERE LIVED A LARGE CIVILIZATION THAT RESIDED ON PLANET ZOLTEN.<br><br>
-            
-            THE FORESATURN EMPIRE WAS IN BEATITUDE WITH A PERFECT ABODE MAKING SURE ALL THE BASIC NEEDS WERE MET FOR MANY YEARS. THIS WAS BEFORE THE GULAKS CAME TO ATTACK, REIGN AND CONQUERED PLANET ZOLTEN.<br><br>
-            
-            ONLY THE INFINITY SURVIVED AND IT TOOK MANY YEARS TO REPOPULATE THEIR EMPIRE. NOW THE TIME HAS COME… TO TAKE BACK THEIR EMPIRE.</h4>
-            <a href="https://discord.gg/qQ2RKnFCKP" target="_blank" class="animated">JOIN THE DISCORD</a>
-        </div>
-        <img src="./assets/kyle.png" alt="" class="animated">
-    </div>
-    <div id="roadmap">
-        <div class="border-svg animated">
-            <svg>
-                <rect width="100%" height="100%" />
-            </svg>
-            <h1>THE ROADMAP</h1>
-        </div>
-        <div class="roadmap-wrapper animated"><img src="./assets/roadmap.png" alt=""></div>
-    </div>
-    <div id="team">
-        <div class="border-svg animated">
-            <svg>
-                <rect width="100%" height="100%" />
-            </svg>
-            <h1>CLAN</h1>
-        </div>
-          <div class="members animated">
-            <div class="member border-light">
-                <img src="./assets/king.png" alt="">
-                <h4>KingGalactic</h4>
-                <p>Visionary/Leader</p>
-            </div>
-            <div class="member border-light">
-                <img src="./assets/synx.png" alt="">
-                <h4>iSynx</h4>
-                <p>Lead Community<br>Marketer</p>
-            </div>
-            <div class="member border-light">
-                <img src="./assets/kyle.png" alt="">
-                <h4>Kyle</h4>
-                <p>Marketing/Project<br>Management</p>
-            </div>
-            <div class="member border-light">
-                <img src="./assets/chowder.png" alt="">
-                <h4>Chowder</h4>
-                <p>Developer</p>
-            </div>
-            <div class="member border-light">
-                <img src="./assets/dino.png" alt="">
-                <h4>Dinotomic</h4>
-                <p>Celebrity Artist</p>
-            </div>
-          </div>
-    </div>
-    <div id="disclaimer">
-        <span>Disclamer</span>
-        <p>We are not affiliated, associated, authorized, endorsed by, or in any way
-             officially connected with the Galactic Empire by Star Wars franchise, or 
-             any of its subsidiaries or its affiliates. The information provided on this
-              website does not constitute any financial advice. The NFT value can be volatile.
-               Please see our <a href="/terms">Terms and Conditions</a></p>
+        </button>
     </div>
     <footer class="animated">
-        <a href="#home">HOME</a>
-        <a href="#about">ABOUT</a>
-        <a href="#rarity">RARITY</a>
-        <a href="#roadmap">ROADMAP</a>
-        <a href="#team">TEAM</a>
+        <a href="#home">PORTAL</a>
+        <a href="/terms">Terms and Conditions</a>
     </footer>
     <script>
         $(window).scroll(function() {
