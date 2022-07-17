@@ -18,12 +18,15 @@ html, body {
     height: 100%;
 }
 
-#title-wrapper {
+body {
     position: relative;
+    text-align: center;
 }
 
 #title {
     position: absolute;
+    top: 0;
+    line-height: 100vh;
 }
 
 nav {
