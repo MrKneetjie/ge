@@ -837,7 +837,7 @@ form button:hover {
     }
 
     h1 {
-        font-size: 2rem;
+        font-size: 2rem !important;
     }
 
     #bottom-portal {
