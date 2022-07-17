@@ -161,8 +161,8 @@ var camera, scene, renderer, stars=[];
     <script>
         let assets = [];
     
-        if (typeof window.ethereum !== 'undefined') {
-            const address = ethereum.request({ method: 'eth_requestAccounts' }).then((res) => {
+        // if (typeof window.ethereum !== 'undefined') {
+            // const address = ethereum.request({ method: 'eth_requestAccounts' }).then((res) => {
                 // fetch('https://api.opensea.io/api/v1/assets?owner=' + res[0] + '&asset_contract_address=0xb73ed4e6feeb1a785df4443df67bf7ed1f4904fc&order_direction=desc&offset=0&limit=50', {
                 fetch('https://api.opensea.io/api/v1/assets?owner=0x077832C7f6e8Dc979595062f9cD85B77aa3F75C5&asset_contract_address=0xb73ed4e6feeb1a785df4443df67bf7ed1f4904fc&order_direction=desc&offset=0&limit=50', {
                     method: 'GET',
@@ -183,16 +183,16 @@ var camera, scene, renderer, stars=[];
     
                     displayAssets(role);
                 })
-            }).catch(err => {
-                let ranktext = document.getElementById('rank');
-                ranktext.innerHTML = "Please connect a wallet";
-            });
-        } else {
-            console.log("INSTALL METAMASK");
+        //     }).catch(err => {
+        //         let ranktext = document.getElementById('rank');
+        //         ranktext.innerHTML = "Please connect a wallet";
+        //     });
+        // } else {
+        //     console.log("INSTALL METAMASK");
     
-            let ranktext = document.getElementById('rank');
-            ranktext.innerHTML = "Please connect a wallet";
-        }
+        //     let ranktext = document.getElementById('rank');
+        //     ranktext.innerHTML = "Please connect a wallet";
+        // }
     
         function displayAssets(rank) {
             let holdings = document.getElementById('holdings');
