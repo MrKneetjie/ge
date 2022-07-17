@@ -38,8 +38,8 @@ body {
     text-align: center;
 }
 
-#gif-wrapper video {
-    width: 100px;
+#gif-wrapper image {
+    width: 50%;
     height: auto;
 }
 
