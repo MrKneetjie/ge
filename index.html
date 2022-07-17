@@ -471,7 +471,7 @@ class CreateParticles {
 
 
       <nav>
-        <a href="#home" id="nav-portal">PORTAL</a>
+        <a href="/holdings.html" id="nav-portal">PORTAL</a>
         <a href="https://discord.gg/qQ2RKnFCKP" title="Join Discord" target="_blank"><div class="icon"><img src="https://toppng.com/uploads/preview/discord-black-logo-11593869050tvdn0uaewo.png" alt=""></div></a>
         <a href="https://mobile.twitter.com/galacticempnft" title="Follow on Twitter" target="_blank"><div class="icon"><img src="https://toppng.com/uploads/preview/twitter-logo-png-transparent-background-graphic-freeuse-twitter-logo-black-11562911265gfzrhbl86r.png" alt=""></div></a>
     </nav>
@@ -559,6 +559,7 @@ class CreateParticles {
      }
 
      function navigate() {
+         console.log("test");
          window.location.href = "./holdings.html";
      }
      
@@ -566,7 +567,7 @@ class CreateParticles {
      addSphere();
      render();
 
-     document.getElementById("portal").addEventListener("click", navigate);
+     document.getElementById("bottom-portal").addEventListener("click", navigate);
      document.getElementById("nav-portal").addEventListener("click", navigate);
     </script>
     <script type="x-shader/x-vertex" id="vertexshader">
@@ -609,7 +610,7 @@ class CreateParticles {
                 <svg>
                     <rect width="100%" height="100%" />
                 </svg>
-                <h1>PORTAL</h1>
+                <h1 id="bottom-portal">PORTAL</h1>
             </div>
         </button>
     </div>
