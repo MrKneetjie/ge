@@ -830,6 +830,13 @@ form button:hover {
     margin-top: 10px;
     font-size: 15px;
 }
+
+@media(min-width: 1980px) {
+    #bottom-portal {
+        margin-top: 50px;
+    }
+}
+
 @media(max-width: 768px) {
     * {
         text-align: center;
