@@ -832,7 +832,16 @@ form button:hover {
 }
 @media(max-width: 768px) {
     * {
-        text-align: center
+        text-align: center;
+        max-width: 100vw;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    #bottom-portal {
+        padding-right: 40px;
     }
 
     nav {
