@@ -166,6 +166,10 @@ var camera, scene, renderer, stars=[];
                 // fetch('https://api.opensea.io/api/v1/assets?owner=' + res[0] + '&asset_contract_address=0xb73ed4e6feeb1a785df4443df67bf7ed1f4904fc&order_direction=desc&offset=0&limit=50', {
                 fetch('https://api.opensea.io/api/v1/assets?owner=0x077832C7f6e8Dc979595062f9cD85B77aa3F75C5&asset_contract_address=0xb73ed4e6feeb1a785df4443df67bf7ed1f4904fc&order_direction=desc&offset=0&limit=50', {
                     method: 'GET',
+                    mode: 'cors',
+                    headers: {
+                        'Access-Control-Allow-Origin':'*'
+                    }
                 }).then((res) => {return res.json()}
                 ).then((data) => {
                     console.log(assets);
