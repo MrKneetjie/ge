@@ -38,9 +38,9 @@ body {
     text-align: center;
 }
 
-#gif-wrapper img {
+#gif-wrapper video {
     width: 100px;
-    height: 100px;
+    height: auto;
 }
 
 nav {
