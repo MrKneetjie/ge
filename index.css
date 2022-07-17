@@ -38,6 +38,11 @@ body {
     text-align: center;
 }
 
+#gif-wrapper img {
+    width: 100px;
+    height: 100px;
+}
+
 nav {
     position: sticky;
     top: 0;
