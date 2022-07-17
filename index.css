@@ -18,6 +18,14 @@ html, body {
     height: 100%;
 }
 
+#title-wrapper {
+    position: relative;
+}
+
+#title {
+    position: absolute;
+}
+
 nav {
     position: sticky;
     top: 0;
