@@ -31,6 +31,13 @@ body {
     font-size: 5rem;
 }
 
+#gif-wrapper {
+    position: absolute;
+    top: 20vh;
+    width: 50%;
+    text-align: center;
+}
+
 nav {
     position: sticky;
     top: 0;
