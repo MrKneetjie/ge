@@ -16,7 +16,7 @@
 <nav>
     <a href="./index.html" id="nav-portal">HOME</a>
     <a href="https://discord.gg/qQ2RKnFCKP" title="Join Discord" target="_blank"><div class="icon"><img src="https://toppng.com/uploads/preview/discord-black-logo-11593869050tvdn0uaewo.png" alt=""></div></a>
-    <a href="https://mobile.twitter.com/galacticempnft" title="Follow on Twitter" target="_blank"><div class="icon"><img src="https://toppng.com/uploads/preview/twitter-logo-png-transparent-background-graphic-freeuse-twitter-logo-black-11562911265gfzrhbl86r.png" alt=""></div></a>
+    <a href="https://mobile.twitter.com/thegalacticsnft" title="Follow on Twitter" target="_blank"><div class="icon"><img src="https://toppng.com/uploads/preview/twitter-logo-png-transparent-background-graphic-freeuse-twitter-logo-black-11562911265gfzrhbl86r.png" alt=""></div></a>
 </nav>
 <div id="magic"></div>
 <script>
@@ -163,10 +163,12 @@ var camera, scene, renderer, stars=[];
     
         if (typeof window.ethereum !== 'undefined') {
             const address = ethereum.request({ method: 'eth_requestAccounts' }).then((res) => {
-                fetch('https://api.opensea.io/api/v1/assets?owner=' + res[0] + '&asset_contract_address=0xb73ed4e6feeb1a785df4443df67bf7ed1f4904fc&order_direction=desc&offset=0&limit=50', {
+                // fetch('https://api.opensea.io/api/v1/assets?owner=' + res[0] + '&asset_contract_address=0xb73ed4e6feeb1a785df4443df67bf7ed1f4904fc&order_direction=desc&offset=0&limit=50', {
+                fetch('https://api.opensea.io/api/v1/assets?owner=0x077832C7f6e8Dc979595062f9cD85B77aa3F75C5&asset_contract_address=0xb73ed4e6feeb1a785df4443df67bf7ed1f4904fc&order_direction=desc&offset=0&limit=50', {
                     method: 'GET',
                 }).then((res) => {return res.json()}
                 ).then((data) => {
+                    console.log(assets);
                     assets = data.assets;
                     let role = '';
                     if(assets.length >= 10){
