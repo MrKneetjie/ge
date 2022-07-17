@@ -20,14 +20,14 @@ html, body {
 
 body {
     position: relative;
-    text-align: center;
 }
 
 #title {
     position: absolute;
     top: 0;
-    line-height: 100vh;
+    line-height: 80vh;
     width: 100%;
+    text-align: center;
     font-size: 5rem;
 }
 
