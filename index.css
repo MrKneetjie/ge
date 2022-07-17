@@ -27,6 +27,8 @@ body {
     position: absolute;
     top: 0;
     line-height: 100vh;
+    width: 100%;
+    font-size: 5rem;
 }
 
 nav {
