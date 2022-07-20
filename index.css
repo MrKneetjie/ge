@@ -851,15 +851,15 @@ form button:hover {
         padding-right: 40px;
     }
 
-    nav {
+    /* nav {
         justify-content: space-between;
         width: 90%;
         padding: 0px 5%;
-    }
+    } */
 
-    nav a {
+    /* nav a {
         margin-right: 0px;
-    }
+    } */
 
     #about h1 {
         font-size: 28px;
